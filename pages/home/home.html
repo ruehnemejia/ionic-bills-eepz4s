@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>BILLS AND CONSUMPTION CALCULATOR</h2>
+
+  <ion-item>
+    <ion-label color="dark"> Typical Appliance </ion-label>
+    <ion-select interface="popover" [(ngModel)]="appliance">
+      <ion-option value="aircon">Air conditioner</ion-option>
+      <ion-option value="kettle">Electric kettle</ion-option>
+      <ion-option value="fan">Stand Fan</ion-option>
+      <ion-option value="laptop">Laptop computer</ion-option>
+      <ion-option value="tv">Television</ion-option>
+      <ion-option value="washing">Washing machine</ion-option>
+    </ion-select>
+</ion-item>
+
+<ion-item>
+  <ion-label>Power consumption:</ion-label>
+  <ion-input type="number" [(ngModel)]="watts"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Hours of use per day:	</ion-label>
+  <ion-input type="number" [(ngModel)]="hrs"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>1 kilowatt-hour cost:		</ion-label>
+  <ion-input type="number" [(ngModel)]="peso"></ion-input>
+</ion-item>
+
+<button ion-button color="secondary" (click)="calculate()">CALCULATE</button>
+
+<br />
+
+<ion-item *ngIf="consumption">
+  <ion-label>Energy consumed per day:	 {{consumption}}	</ion-label>
+  </ion-item>
+
+<ion-item>
+  <ion-label>Energy consumed per month:	 {{consMonth}}	</ion-label>
+  </ion-item>
+
+<ion-item>
+  <ion-label>Energy consumed per year:	 {{consYear}}	</ion-label>
+  </ion-item>
+
+<br />
+
+<ion-item>
+  <ion-label>Electricity cost per day:	 {{cost}}	</ion-label>
+  </ion-item>
+
+<ion-item>
+  <ion-label>Electricity cost per month:	 {{costMonth}}	</ion-label>
+  </ion-item>
+
+<ion-item>
+  <ion-label>Electricity cost per year:	 {{costYear}}	</ion-label>
+  </ion-item>
+
+</ion-content>
